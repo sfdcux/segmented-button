@@ -1,0 +1,23 @@
+:host {
+    display: inline-block;
+    background-color:white;
+    padding:10px;
+    width: 100%;
+    border: 1px solid ;
+    border-color: rgb(221, 219, 218);
+    border-radius: 2%;
+}
+
+.selected {
+    box-shadow: inset 0px 0px 0px 2px #2971CB;;
+    box-sizing: border-box;
+    font-weight: bolder;
+    color: black;
+    background-color: #E9F1FA;
+}
+
+.unselected {
+    box-sizing: border-box;
+    color: #333333;
+}
+

@@ -1,0 +1,35 @@
+<template>
+    <lightning-spinner
+        if:false={ready}
+        alternative-text="loading">
+        
+    </lightning-spinner>
+        <ul class="slds-button-group-list">
+            <template if:true={_wiredResult}>
+                    <fieldset class="slds-form-element">
+                            <legend class="slds-form-element__legend slds-form-element__label">
+                                <template if:true={required}>
+                                        <abbr class="slds-required" title="required">*</abbr>
+                                </template>
+                                {label}
+                            </legend>
+                            <div class="slds-form-element__control">
+                                <div class="slds-radio_button-group">
+                                    <template for:each={options} for:item="opt">
+                                            <li key={opt.value}>
+                                                <template if:true={opt.selected}>
+                                                    <button class="slds-button slds-button_neutral selected" onclick={updateValue} disabled={loading} value={opt.value}>
+                                                        {opt.label}
+                                                    </button>
+                                                </template>
+                                                <template if:false={opt.selected}>
+                                                    <button class="slds-button slds-button_neutral unselected" onclick={updateValue} value={opt.value} disabled={loading}>{opt.label}</button>
+                                                </template> 
+                                            </li>
+                                    </template>
+                                </div>
+                        </div>
+                    </fieldset>
+            </template>
+        </ul>
+</template>
